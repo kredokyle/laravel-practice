@@ -69,7 +69,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect()->route('index');
+        return redirect()->route('home');
     }
 
     private function deleteAvatar($image_name)
