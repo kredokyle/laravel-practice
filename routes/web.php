@@ -18,3 +18,4 @@ Route::get('/', [UserController::class, 'home'])->name('home');
 Route::get('create', [UserController::class, 'create'])->name('create');
 Route::post('store', [UserController::class, 'store'])->name('store');
 Route::get('/{id}/edit', [UserController::class, 'edit'])->name('edit');
+Route::patch('/{id}/update', [UserController::class, 'update'])->name('update');

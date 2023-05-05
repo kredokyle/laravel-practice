@@ -9,7 +9,7 @@
         <a href="{{ route('create') }}">New User</a>
     </div>
     
-    <table class="table table-hover table-sm">
+    <table class="table table-hover table-sm align-middle">
         <thead>
             <tr>
                 <th></th>
@@ -21,7 +21,15 @@
         <tbody>
             @foreach ($all_users as $user)
             <tr>
-                <td>avatar</td>
+                <td>
+                    @if ($user->avatar)
+                        <img src="{{ asset('storage/avatars/' . $user->avatar) }}" alt="{{ $user->avatar }}" class="border p-1 d-block mx-auto">
+                    @else
+                        <div class="text-center">
+                            <i class="fa-solid fa-user fa-4x" class="text-dark"></i>
+                        </div>
+                    @endif
+                </td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>

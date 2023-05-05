@@ -3,13 +3,13 @@
 @section('title', 'Edit User')
 
 @section('content')
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form action="{{ route('update', $user->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('patch')
 
         <div class="mb-3">
             @if ($user->avatar)
-                <img src="#" alt="{{ $user->avatar }}" class="img-thumbnail d-block mx-auto">
+                <img src="{{ asset('storage/avatars/' . $user->avatar) }}" alt="{{ $user->avatar }}" class="border p-1 d-block mx-auto">
             @else
                 <div class="text-center">
                     <i class="fa-solid fa-user fa-4x" class="text-dark"></i>
